@@ -1,8 +1,14 @@
 import React from 'react'
+import AddCourse from './_components/AddCourse'
+//import UserCourseList from './_components/UserCourseList'
 
-const Dashboard = () => {
+function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+      <AddCourse/>
+      {/* Display List of Course */}
+      {/*<UserCourseList/>*/}
+    </div>
   )
 }
 

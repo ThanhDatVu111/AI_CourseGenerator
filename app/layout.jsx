@@ -1,8 +1,12 @@
 
-import { Inter,Outfit } from "next/font/google";
+import {DM_Serif_Display} from "next/font/google";
 import "./globals.css";
 import { ClerkProvider, GoogleOneTap} from "@clerk/nextjs";
-const inter = Outfit({ subsets: ["latin"] });
+
+const inter = DM_Serif_Display({
+  weight: '400', // Specify the available weight
+  subsets: ['latin'], // Add any subsets if necessary
+});
 
 export const metadata = {
   title: "Create Next App",
