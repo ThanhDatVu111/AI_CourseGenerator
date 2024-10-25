@@ -1,0 +1,79 @@
+export default [
+    {
+        id:1,
+        name:'Programming',
+        icon:'/coding.png',
+        prompt:''
+    },
+    {
+        id:2,
+        name:'Health',
+        icon:'/lotus.png',
+        prompt:''
+    },
+    {
+        id:3,
+        name:'Creative',
+        icon:'/creative.png',
+        prompt:''
+    },
+    {
+        id:4,
+        name:'Cooking',
+        icon:'/cooking.png',
+        prompt:'',
+        size: 80
+    },
+    {
+        id:5,
+        name:'Fitness',
+        icon:'/fitness.png',
+        prompt:'',
+        size: 80
+    },
+    {
+        id:6,
+        name:'Automotive',
+        icon:'/car.png',
+        prompt:''
+    },
+    {
+        id:7,
+        name:'Photography',
+        icon:'/photography.png',
+        prompt:'',
+        size: 90
+    },
+    {
+        id:8,
+        name:'Music',
+        icon:'/music.png',
+        prompt:''
+    },
+    {
+        id:9,
+        name:'Finance',
+        icon:'/finance.png',
+        prompt:'',
+        size: 90
+    },
+    {
+        id:10,
+        name:'Travel',
+        icon:'/travel.png',
+        prompt:''
+    },
+    {
+        id:11,
+        name:'Language',
+        icon:'/language.png',
+        prompt:''
+    },
+    {
+        id:12,
+        name:'Personal Development',
+        icon:'/self-improvement.png',
+        prompt:'',
+        size: 100
+    }
+]
