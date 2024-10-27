@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { MdCategory } from "react-icons/md";
 import { FcIdea } from "react-icons/fc";
 import { FaListCheck } from "react-icons/fa6";
@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import SelectCategory from "./_components/SelectCategory";
 import TopicDescription from "./_components/TopicDescription";
 import SelectOption from "./_components/SelectOption";
+import { UserInputContext } from "../_context/UserInputContext";
 
 const CreateCourse = () => {
   const StepperOptions = [
@@ -26,7 +27,49 @@ const CreateCourse = () => {
       icon: <FaListCheck />,
     },
   ];
+  const { userCourseInput, setUserCourseInput } = useContext(UserInputContext);
   const [activeIndex, setActiveIndex] = useState(0);
+  useEffect(() => {
+    console.log(userCourseInput);
+  }, [userCourseInput]);
+
+  /**
+   * Used to check Next Button Enable or Disable Status
+   */
+  const isEmpty = (value) => !value || value.length === 0;
+  const checkStatus = () => {
+    if (userCourseInput?.length == 0) {
+      return true;
+    }
+    if (
+      activeIndex == 0 &&
+      (userCourseInput?.category?.length == 0 ||
+        userCourseInput?.category == undefined)
+    ) {
+      return true;
+    }
+    if (
+      activeIndex === 1 &&
+      (isEmpty(userCourseInput?.topic) ||
+        isEmpty(userCourseInput?.description) ||
+        isEmpty(userCourseInput?.target) ||
+        isEmpty(userCourseInput?.outcomes))
+    ) {
+      return true;
+    } else if (
+      activeIndex == 2 &&
+      (userCourseInput?.level == undefined ||
+        userCourseInput?.duration == undefined ||
+        userCourseInput?.video == undefined ||
+        userCourseInput?.format == undefined ||
+        userCourseInput?.language == undefined ||
+        userCourseInput?.noOfChapter == undefined)
+    ) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <div>
       {/* Stepper  */}
@@ -76,11 +119,16 @@ const CreateCourse = () => {
             Previous
           </Button>
           {activeIndex < 2 && (
-            <Button onClick={() => setActiveIndex(activeIndex + 1)}>
+            <Button
+              disabled={checkStatus()}
+              onClick={() => setActiveIndex(activeIndex + 1)}
+            >
               Next
             </Button>
           )}
-          {activeIndex == 2 && <Button>Generate Course Layout</Button>}
+          {activeIndex == 2 && (
+            <Button disabled={checkStatus()}>Generate Course Layout</Button>
+          )}
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { UserInputContext } from "@/app/_context/UserInputContext";
 import {
   Select,
   SelectContent,
@@ -7,13 +8,26 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
+
 function SelectOption() {
+  const { userCourseInput, setUserCourseInput } = useContext(UserInputContext);
+
+  const handleInputChange = (fieldName, value) => {
+    setUserCourseInput((prev) => ({
+      ...prev,
+      [fieldName]: value,
+    }));
+  };
+
   return (
     <div className="px-10 md:px-20 lg:px-44">
       <div className="grid grid-cols-2 gap-10">
         <div>
           <label className="text-sm">🎓 Difficulty Level</label>
-          <Select>
+          <Select
+            onValueChange={(value) => handleInputChange("level", value)}
+            defaultValue={userCourseInput?.level}
+          >
             <SelectTrigger className="h-14 text-lg">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
@@ -24,9 +38,13 @@ function SelectOption() {
             </SelectContent>
           </Select>
         </div>
+
         <div>
           <label className="text-sm">🕒 Course Duration</label>
-          <Select>
+          <Select
+            onValueChange={(value) => handleInputChange("duration", value)}
+            defaultValue={userCourseInput?.duration}
+          >
             <SelectTrigger className="h-14 text-lg">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
@@ -39,9 +57,13 @@ function SelectOption() {
             </SelectContent>
           </Select>
         </div>
+
         <div>
           <label className="text-sm">▶️ Add Video</label>
-          <Select>
+          <Select
+            onValueChange={(value) => handleInputChange("video", value)}
+            defaultValue={userCourseInput?.video}
+          >
             <SelectTrigger className="h-14 text-lg">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
@@ -51,25 +73,32 @@ function SelectOption() {
             </SelectContent>
           </Select>
         </div>
+
         <div>
           <label className="text-sm">🌐 Language</label>
-          <Select>
+          <Select
+            onValueChange={(value) => handleInputChange("language", value)}
+            defaultValue={userCourseInput?.language}
+          >
             <SelectTrigger className="h-14 text-lg">
               <SelectValue placeholder="Select" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="English">English</SelectItem>
-              <SelectItem value="Spanish">Vietnamese</SelectItem>
-              <SelectItem value="English">Chinese</SelectItem>
-              <SelectItem value="French">Japanese</SelectItem>
-              <SelectItem value="English">Spainish</SelectItem>
-              {/* Add more languages as needed */}
+              <SelectItem value="Vietnamese">Vietnamese</SelectItem>
+              <SelectItem value="Chinese">Chinese</SelectItem>
+              <SelectItem value="Japanese">Japanese</SelectItem>
+              <SelectItem value="Spanish">Spanish</SelectItem>
             </SelectContent>
           </Select>
         </div>
+
         <div>
           <label className="text-sm">📝 Preferred Course Format</label>
-          <Select>
+          <Select
+            onValueChange={(value) => handleInputChange("format", value)}
+            defaultValue={userCourseInput?.format}
+          >
             <SelectTrigger className="h-14 text-lg">
               <SelectValue placeholder="Select format" />
             </SelectTrigger>
@@ -78,14 +107,23 @@ function SelectOption() {
               <SelectItem value="Written Articles">Written Articles</SelectItem>
               <SelectItem value="Quizzes">Quizzes</SelectItem>
               <SelectItem value="Hands-On Exercises">
+                {" "}
                 Hands-On Exercises
               </SelectItem>
             </SelectContent>
           </Select>
         </div>
+
         <div>
           <label className="text-sm">📖 No of Chapters</label>
-          <Input type="number" />
+          <Input
+            type="number"
+            className="h-14 text-lg"
+            defaultValue={userCourseInput?.noOfChapter}
+            onChange={(event) =>
+              handleInputChange("noOfChapter", event.target.value)
+            }
+          />
         </div>
       </div>
     </div>
