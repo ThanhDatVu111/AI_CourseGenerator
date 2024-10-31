@@ -8,6 +8,13 @@ import SelectCategory from "./_components/SelectCategory";
 import TopicDescription from "./_components/TopicDescription";
 import SelectOption from "./_components/SelectOption";
 import { UserInputContext } from "../_context/UserInputContext";
+import { GenerateCourseLayout_AI } from "@/configs/AIModel";
+import LoadingDialog from "./_components/LoadingDialog";
+import { v4 as uuidv4 } from "uuid";
+import { useUser } from "@clerk/nextjs";
+import { CourseList } from "@/configs/schema";
+import { db } from "@/configs/Db";
+import { useRouter } from "next/navigation";
 
 const CreateCourse = () => {
   const StepperOptions = [
@@ -27,8 +34,13 @@ const CreateCourse = () => {
       icon: <FaListCheck />,
     },
   ];
-  const { userCourseInput, setUserCourseInput } = useContext(UserInputContext);
+
+  const {userCourseInput, setUserCourseInput} = useContext(UserInputContext);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const {user} = useUser();
+  const router = useRouter();
+
   useEffect(() => {
     console.log(userCourseInput);
   }, [userCourseInput]);
@@ -52,7 +64,7 @@ const CreateCourse = () => {
       activeIndex === 1 &&
       (isEmpty(userCourseInput?.topic) ||
         isEmpty(userCourseInput?.description) ||
-        isEmpty(userCourseInput?.target) ||
+        isEmpty(userCourseInput?.prerequisites) ||
         isEmpty(userCourseInput?.outcomes))
     ) {
       return true;
@@ -68,6 +80,75 @@ const CreateCourse = () => {
       return true;
     }
     return false;
+  };
+
+  const GenerateCourseLayout = async () => {
+    setLoading(true);
+    const BASIC_PROMPT =
+      "Generate A Course Tutorial on Following Detail With field as Course Name, Description, Along with Chapter Name, about, Duration:";
+    const USER_INPUT_PROMPT =
+      "Category: " +
+      userCourseInput?.category +
+      ",Description " +
+      userCourseInput?.description +
+      ",Topic: " +
+      userCourseInput?.topic +
+      ",Prerequisites:" +
+      userCourseInput?.prerequisites +
+      ",Duration:" +
+      userCourseInput?.duration +
+      ",NoOfChapters:" +
+      userCourseInput?.noOfChapter +
+      ",Format:" +
+      userCourseInput?.format +
+      ",Language:" +
+      userCourseInput?.language +
+      ",Level:" +
+      userCourseInput?.level +
+      ",Outcome:" +
+      userCourseInput?.outcomes +
+      ",Video:" +
+      userCourseInput?.video +
+      ",in JSON format";
+    const FINAL_PROMPT = BASIC_PROMPT + USER_INPUT_PROMPT;
+    console.log(FINAL_PROMPT);
+    const result = await GenerateCourseLayout_AI.sendMessage(FINAL_PROMPT);
+    console.log(result.response?.text());
+    console.log(JSON.parse(result.response?.text()));
+    setLoading(false);
+    SaveCourseLayoutInDb(JSON.parse(result.response?.text()));
+  };
+
+  const SaveCourseLayoutInDb = async (courseLayout) => {
+    const id = uuidv4(); // Generate a unique course ID
+    setLoading(true);
+    try {
+      const result = await db.insert(CourseList).values({
+        courseId: id,
+        description: userCourseInput?.description,
+        name: userCourseInput?.topic,
+        category: userCourseInput?.category,
+        prerequisites: userCourseInput?.prerequisites,
+        duration: userCourseInput?.duration,
+        noOfChapters: userCourseInput?.noOfChapter,
+        format: userCourseInput?.format,
+        language: userCourseInput?.language,
+        level: userCourseInput?.level,
+        outcomes: userCourseInput?.outcomes,
+        includeVideo: userCourseInput?.video ? "Yes" : "No",
+        courseOutput: courseLayout,
+        createdBy: user?.primaryEmailAddress?.emailAddress,
+        userName: user?.fullName,
+        userProfileImage: user?.imageUrl,
+        publish: false, // Set default value for publish
+      });
+      console.log("Course saved successfully:", result);
+    } catch (error) {
+      console.error("Error saving course layout:", error);
+    } finally {
+      setLoading(false);
+      router.replace("/create-course/" + id);
+    }
   };
 
   return (
@@ -127,10 +208,16 @@ const CreateCourse = () => {
             </Button>
           )}
           {activeIndex == 2 && (
-            <Button disabled={checkStatus()}>Generate Course Layout</Button>
+            <Button
+              disabled={checkStatus()}
+              onClick={() => GenerateCourseLayout()}
+            >
+              Generate Course Layout
+            </Button>
           )}
         </div>
       </div>
+      <LoadingDialog loading={loading} />
     </div>
   );
 };

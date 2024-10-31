@@ -43,20 +43,20 @@ const TopicDescription = () => {
         />
       </div>
 
-      {/* Target Audience */}
+      {/* Prerequisite Knowledge */}
       <div className="mt-5">
         <label>
-          🎯 Who is your target audience for this course? (e.g., Beginners,
-          Intermediate learners, Professionals)
+          📚 What prior knowledge or experience should learners ideally have for
+          this course? (e.g., basic programming concepts, none required)
         </label>
         <Input
-          placeholder="Target Audience"
+          placeholder="Prerequisite Knowledge"
           className="h-14 text-xl"
-          defaultValue={userCourseInput?.target}
-          onChange={(e) => handleInputChange("target", e.target.value)}
+          defaultValue={userCourseInput?.prerequisites}
+          onChange={(e) => handleInputChange("prerequisites", e.target.value)}
         />
       </div>
-
+      
       {/* Key Learning Outcomes */}
       <div className="mt-5">
         <label>
