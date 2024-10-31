@@ -1,5 +1,8 @@
 "use client";
 import React, { useEffect} from "react";
+import { useUser } from "@clerk/nextjs";
+import { db } from "@/configs/db";
+import { CourseList } from "@/configs/schema";
 
 function CourseLayout({ params }) {
   const { user } = useUser();
@@ -24,15 +27,11 @@ function CourseLayout({ params }) {
   return (
     <div className="mt-10 px-7 md:px-20 lg:px-44">
       <h2 className="font-bold text-center text-2xl">Course Layout</h2>
-
-     
       {/* Basic Info  */}
      
       {/* Course Detail  */}
    
       {/* List of Lesson  */}
-    
-      
     </div>
   );
 }
