@@ -1,79 +1,91 @@
 export default [
-    {
-        id:1,
-        name:'Programming',
-        icon:'/coding.png',
-        prompt:''
-    },
-    {
-        id:2,
-        name:'Health',
-        icon:'/lotus.png',
-        prompt:''
-    },
-    {
-        id:3,
-        name:'Creative',
-        icon:'/creative.png',
-        prompt:''
-    },
-    {
-        id:4,
-        name:'Cooking',
-        icon:'/cooking.png',
-        prompt:'',
-        size: 80
-    },
-    {
-        id:5,
-        name:'Fitness',
-        icon:'/fitness.png',
-        prompt:'',
-        size: 80
-    },
-    {
-        id:6,
-        name:'Automotive',
-        icon:'/car.png',
-        prompt:''
-    },
-    {
-        id:7,
-        name:'Photography',
-        icon:'/photography.png',
-        prompt:'',
-        size: 90
-    },
-    {
-        id:8,
-        name:'Music',
-        icon:'/music.png',
-        prompt:''
-    },
-    {
-        id:9,
-        name:'Finance',
-        icon:'/finance.png',
-        prompt:'',
-        size: 90
-    },
-    {
-        id:10,
-        name:'Travel',
-        icon:'/travel.png',
-        prompt:''
-    },
-    {
-        id:11,
-        name:'Language',
-        icon:'/language.png',
-        prompt:''
-    },
-    {
-        id:12,
-        name:'Personal Development',
-        icon:'/self-improvement.png',
-        prompt:'',
-        size: 100
-    }
-]
+  {
+    id: 1,
+    name: "Programming",
+    icon: "/coding.png",
+    alt: "Programming icon",
+    prompt: "",
+  },
+  {
+    id: 2,
+    name: "Health",
+    icon: "/lotus.png",
+    alt: "Health icon",
+    prompt: "",
+  },
+  {
+    id: 3,
+    name: "Creative",
+    icon: "/creative.png",
+    alt: "Creative icon",
+    prompt: "",
+  },
+  {
+    id: 4,
+    name: "Cooking",
+    icon: "/cooking.png",
+    alt: "Cooking icon",
+    prompt: "",
+    size: 80,
+  },
+  {
+    id: 5,
+    name: "Fitness",
+    icon: "/fitness.png",
+    alt: "Fitness icon",
+    prompt: "",
+    size: 80,
+  },
+  {
+    id: 6,
+    name: "Automotive",
+    icon: "/car.png",
+    alt: "Automotive icon",
+    prompt: "",
+  },
+  {
+    id: 7,
+    name: "Photography",
+    icon: "/photography.png",
+    alt: "Photography icon",
+    prompt: "",
+    size: 90,
+  },
+  {
+    id: 8,
+    name: "Music",
+    icon: "/music.png",
+    alt: "Music icon",
+    prompt: "",
+  },
+  {
+    id: 9,
+    name: "Finance",
+    icon: "/finance.png",
+    alt: "Finance icon",
+    prompt: "",
+    size: 90,
+  },
+  {
+    id: 10,
+    name: "Travel",
+    icon: "/travel.png",
+    alt: "Travel icon",
+    prompt: "",
+  },
+  {
+    id: 11,
+    name: "Language",
+    icon: "/language.png",
+    alt: "Language icon",
+    prompt: "",
+  },
+  {
+    id: 12,
+    name: "Personal Development",
+    icon: "/self-improvement.png",
+    alt: "Personal Development icon",
+    prompt: "",
+    size: 100,
+  },
+];

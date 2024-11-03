@@ -1,7 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import SideBar from "./_components/SideBar";
-import Header from "./_components/Header";
+import React from "react";
+import dynamic from "next/dynamic";
+
+const SideBar = dynamic(() => import("./_components/SideBar"), { ssr: false });
+const Header = dynamic(() => import("./_components/Header"), { ssr: false });
 
 function DashboardLayout({ children }) {
   return (

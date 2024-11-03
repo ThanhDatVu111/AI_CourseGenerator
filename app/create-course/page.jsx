@@ -117,6 +117,7 @@ const CreateCourse = () => {
     console.log(JSON.parse(result.response?.text()));
     setLoading(false);
     SaveCourseLayoutInDb(JSON.parse(result.response?.text()));
+    // courseLayout is equivalent to the parsed response from the AI model, which is JSON.parse(result.response?.text()).
   };
 
   const SaveCourseLayoutInDb = async (courseLayout) => {

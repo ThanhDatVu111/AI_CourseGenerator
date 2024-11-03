@@ -50,9 +50,9 @@ function SelectOption() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="1 Hourse">1 Hours</SelectItem>
-              <SelectItem value="2 Hourse">2 Hourse</SelectItem>
+              <SelectItem value="2 Hourse">2 Hours</SelectItem>
               <SelectItem value="More than 3 Hourse">
-                More than 3 Hourse
+                More than 3 Hours
               </SelectItem>
             </SelectContent>
           </Select>
