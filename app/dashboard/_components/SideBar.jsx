@@ -1,14 +1,19 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Progress } from "@/components/ui/progress";
-import { IoHome, IoLogOut } from "react-icons/io5";
-import { GiUpgrade } from "react-icons/gi";
+import { IoHome} from "react-icons/io5";
 import { MdExplore } from "react-icons/md";
 import { usePathname } from "next/navigation";
+import { UserCourseListContext } from "@/app/_context/UserCourseListContext";
+
 
 const SideBar = () => {
+  const { userCourseList, setUserCourseList } = useContext(
+    UserCourseListContext
+  ); // get userCourseList from UserCourseListContext
+
   const Menu = [
     {
       id: 1,
@@ -22,24 +27,12 @@ const SideBar = () => {
       icon: <MdExplore />,
       path: "/dashboard/explore",
     },
-    {
-      id: 3,
-      name: "Upgrade",
-      icon: <GiUpgrade />,
-      path: "/dashboard/upgrade",
-    },
-    {
-      id: 4,
-      name: "Logout",
-      icon: <IoLogOut />,
-      path: "/dashboard/logout",
-    },
   ];
   const path = usePathname();
   return (
     <div className="fixed h-full md:w-64 p-5 shadow-2xl">
       <Image src={"/logo.svg"} width={250} height={100} />
-      <hr className="my-4" />
+      <hr className="my-4 border-black" />
       <ul>
         {Menu.map((item) => (
           <Link href={item.path}>
@@ -56,8 +49,11 @@ const SideBar = () => {
       </ul>
 
       <div className="absolute bottom-10 w-[80%]">
-        <Progress value={53} />
-        <h2 className="text-sm my-2">3 Out of 5 Course created</h2>
+        <Progress value={(userCourseList?.length / 5) * 100} />
+        {/* using percentage */}
+        <h2 className="text-sm my-2">
+          {userCourseList?.length} Out of 5 Course created
+        </h2>
         <h2 className="text-xs text-gray-500">
           Upgrade your plan for unlimted course generate
         </h2>
@@ -67,3 +63,4 @@ const SideBar = () => {
 };
 
 export default SideBar
+

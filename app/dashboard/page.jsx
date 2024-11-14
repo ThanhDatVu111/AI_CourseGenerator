@@ -1,13 +1,13 @@
 import React from 'react'
 import AddCourse from './_components/AddCourse'
-//import UserCourseList from './_components/UserCourseList'
+import UserCourseList from './_components/UserCourseList'
 
 function Dashboard() {
   return (
     <div>
       <AddCourse/>
       {/* Display List of Course */}
-      {/*<UserCourseList/>*/}
+      <UserCourseList/>
     </div>
   )
 }

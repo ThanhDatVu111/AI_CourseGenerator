@@ -1,7 +1,5 @@
 const {
   GoogleGenerativeAI,
-  HarmCategory,
-  HarmBlockThreshold,
 } = require("@google/generative-ai");
 
 const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
@@ -69,3 +67,9 @@ export const GenerateChapterContent_AI = model.startChat({
 
 // const result = await chatSession.sendMessage("INSERT_INPUT_HERE");
 // console.log(result.response.text());
+
+//By including this example in history, the model understands both the format 
+//and the structure expected for the response. Even though the initial example is 
+//about Python, the model understands the general pattern. When new topics like "C++ Basics" or "Finance" are introduced, 
+//the model applies this pattern to generate content in a similar structure.
+
