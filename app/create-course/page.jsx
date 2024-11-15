@@ -12,7 +12,7 @@ import { GenerateCourseLayout_AI } from "@/configs/AIModel";
 import LoadingDialog from "./_components/LoadingDialog";
 import { v4 as uuidv4 } from "uuid";
 import { useUser } from "@clerk/nextjs";
-import { CourseList } from "@/configs/schema";
+import { CourseList } from "@/configs/Schema";
 import { db } from "@/configs/Db";
 import { useRouter } from "next/navigation";
 

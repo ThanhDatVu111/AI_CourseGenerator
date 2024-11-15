@@ -1,6 +1,6 @@
 "use client";
-import { db } from "@/configs/db";
-import { CourseList } from "@/configs/schema";
+import { db } from "@/configs/Db";
+import { CourseList } from "@/configs/Schema";
 import React, { useEffect, useState } from "react";
 import CourseCard from "../_components/CourseCard";
 import { Button } from "@/components/ui/button";

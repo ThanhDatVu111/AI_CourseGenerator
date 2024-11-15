@@ -8,7 +8,7 @@ import BasicInfo from "./_components/BasicInfo";
 import CourseDetail from "./_components/CourseDetail";
 import ChapterList from "./_components/ChapterList";
 import { Button } from "@/components/ui/button";
-import { GenerateChapterContent_AI } from "@/configs/AiModel";
+import { GenerateChapterContent_AI } from "@/configs/AIModel";
 import LoadingDialog from "../_components/LoadingDialog";
 import Service from "@/configs/Service";
 import { useRouter } from "next/navigation";
