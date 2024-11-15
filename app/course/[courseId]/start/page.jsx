@@ -16,7 +16,7 @@ function CourseStart({ params }) {
   useEffect(() => {
     GetCourse();
   }, []);
-  //GetCourse() will only be called once when the component initially mounts. 
+  //GetCourse() will only be called once when the component initially mounts.
   //It will not be called on every render or update, only on the first render.
 
   const GetCourse = async () => {
@@ -67,6 +67,7 @@ function CourseStart({ params }) {
           ))}
         </div>
       </div>
+
       {/* Content Div  */}
       <div className="md:ml-72">
         <ChapterContent chapter={selectedChapter} content={chapterContent} />

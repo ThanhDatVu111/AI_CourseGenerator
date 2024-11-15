@@ -115,8 +115,8 @@ const CreateCourse = () => {
     const result = await GenerateCourseLayout_AI.sendMessage(FINAL_PROMPT);
     console.log(result.response?.text());
     console.log(JSON.parse(result.response?.text()));
-    setLoading(false);
     SaveCourseLayoutInDb(JSON.parse(result.response?.text()));
+    setLoading(false);
     // courseLayout is equivalent to the parsed response from the AI model, which is JSON.parse(result.response?.text()).
   };
 

@@ -12,7 +12,6 @@ import { GenerateChapterContent_AI } from "@/configs/AiModel";
 import LoadingDialog from "../_components/LoadingDialog";
 import Service from "@/configs/Service";
 import { useRouter } from "next/navigation";
-import { TbRulerOff } from "react-icons/tb";
 
 function CourseLayout({ params }) {
   const { user } = useUser();
@@ -66,7 +65,6 @@ function CourseLayout({ params }) {
         console.log(result?.response?.text());
         const content = JSON.parse(result?.response?.text());
 
-
         // Save Chapter Content + Video URL
         const resp = await db
           .insert(Chapters)
@@ -95,11 +93,15 @@ function CourseLayout({ params }) {
     <div className="mt-10 px-7 md:px-20 lg:px-44">
       <h2 className="font-bold text-center text-2xl">Course Layout</h2>
       {/* Basic Info  */}
-      <BasicInfo course={course} refreshData={() => GetCourse()} />
+      <BasicInfo course={course} refreshData={() => GetCourse()} edit={true}/>
       {/* Course Detail  */}
       <CourseDetail course={course} />
       {/* List of Lesson  */}
-      <ChapterList course={course} refreshData={() => GetCourse()} />
+      <ChapterList
+        course={course}
+        refreshData={() => GetCourse()}
+        edit={true}
+      />
       <LoadingDialog loading={loading} />
       <Button onClick={GenerateChapterContent} className="my-10">
         Finish

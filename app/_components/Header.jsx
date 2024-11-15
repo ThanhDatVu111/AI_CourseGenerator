@@ -62,9 +62,6 @@ function Header() {
         and the middleware will check if the user is authenticated. 
         If not, they will be redirected to the sign-in page. */}
       </Link>
-
-      {/* User Icon */}
-      <UserButton />
     </div>
   );
 }

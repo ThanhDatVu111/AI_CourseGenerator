@@ -4,12 +4,15 @@ import { HiOutlineBookOpen } from "react-icons/hi2";
 import { HiMiniEllipsisVertical } from "react-icons/hi2";
 import DropdownOption from "./DropdownOption";
 import { db } from "@/configs/Db";
-import { CourseList } from "@/configs/Schema";
+import { CourseList, Chapters } from "@/configs/Schema";
 import { eq } from "drizzle-orm";
 import Link from "next/link";
 
 function CourseCard({ course, refreshData, displayUser}) {
   const handleOnDelete = async () => {
+    //Delete Chapters
+    await db.delete(Chapters).where(eq(Chapters.courseId, course?.id));
+    // Delete Course
     const resp = await db
       .delete(CourseList)
       .where(eq(CourseList.id, course?.id))
