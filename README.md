@@ -36,7 +36,11 @@
 
 <!-- ABOUT THE PROJECT -->
 ![Product Name Screen Shot](public/rm1.png)
+
+
 ![Product Name Screen Shot](public/rm2.png)
+
+
 ![Product Name Screen Shot](public/rm3.png)
 
 The AI Course Generator is a web application designed to help users create customized courses with the assistance of AI. By using the Gemini API, users can input their own parameters to generate a course that can serve educational purposes or be shared with friends. The platform includes:
@@ -57,20 +61,42 @@ This project is built using modern technologies to ensure performance and scalab
 #### Frontend
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
-* [![Tailwind CSS][TailwindCSS.com]][TailwindCSS-url]
-* Radix UI Components
-* Lucide React Icons
+* [![Tailwind CSS][Tailwind.css]][Tailwind-url]
+* [![Radix UI][Radix.ui]][Radix-url]
+* [![Lucide React][Lucide.react]][Lucide-url]
 
 #### Backend
-* Next.js API Routes
-* Drizzle ORM
-* Firebase
-* Google Gemini API
+* [![Next.js][Next.js]][Next-url]
+* [![Drizzle ORM][Drizzle.orm]][Drizzle-url]
+* [![Firebase][Firebase.com]][Firebase-url]
+* [![Google Gemini][Gemini.ai]][Gemini-url]
 
 #### Authentication & Database
-* Clerk Authentication
-* Neon Database (PostgreSQL)
-* Firebase Realtime Database
+* [![Clerk][Clerk.dev]][Clerk-url]
+* [![Neon Database][Neon.tech]][Neon-url]
+* [![Firebase][Firebase.com]][Firebase-url]
+
+<!-- MARKDOWN LINKS & BADGES -->
+[Next.js]: https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white
+[Next-url]: https://nextjs.org/
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Tailwind.css]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[Tailwind-url]: https://tailwindcss.com/
+[Radix.ui]: https://img.shields.io/badge/Radix_UI-161618?style=for-the-badge&logo=radix-ui&logoColor=white
+[Radix-url]: https://www.radix-ui.com/
+[Lucide.react]: https://img.shields.io/badge/Lucide_React-gray?style=for-the-badge
+[Lucide-url]: https://lucide.dev/
+[Drizzle.orm]: https://img.shields.io/badge/Drizzle_ORM-C5F74F?style=for-the-badge
+[Drizzle-url]: https://orm.drizzle.team/
+[Firebase.com]: https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white
+[Firebase-url]: https://firebase.google.com/
+[Gemini.ai]: https://img.shields.io/badge/Gemini_AI-8E75B2?style=for-the-badge&logo=google&logoColor=white
+[Gemini-url]: https://deepmind.google/technologies/gemini/
+[Clerk.dev]: https://img.shields.io/badge/Clerk-6C47FF?style=for-the-badge
+[Clerk-url]: https://clerk.com/
+[Neon.tech]: https://img.shields.io/badge/Neon-000000?style=for-the-badge&logo=postgresql&logoColor=white
+[Neon-url]: https://neon.tech/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -156,7 +182,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## 📧 Contact
 
-Thanh Dat Vu - [LinkedIn](https://www.linkedin.com/in/thanhdatvu111) - thanhdatvu111@gmail.com
+Thanh Dat Vu - [LinkedIn](https://www.linkedin.com/in/thanhdatvu111) - thanhdatvu.203@gmail.com
 
 Project Link: [https://github.com/ThanhDatVu111/AI_CourseGenerator](https://github.com/ThanhDatVu111/AI_CourseGenerator)
 
