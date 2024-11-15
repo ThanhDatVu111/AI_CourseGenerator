@@ -6,11 +6,9 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Forks][forks-shield]][[forks-url](https://github.com/ThanhDatVu111/AI_CourseGenerator/stargazers)]
-[![Stargazers][stars-shield]][[stars-url](https://github.com/ThanhDatVu111/AI_CourseGenerator/stargazers)]
-[![LinkedIn][linkedin-shield]][[linkedin-url](https://www.linkedin.com/in/thanh-dat-vu-42b468286/)]
-
-
+[![Forks][forks-shield]](https://github.com/ThanhDatVu111/AI_CourseGenerator/network/members)
+[![Stargazers][stars-shield]](https://github.com/ThanhDatVu111/AI_CourseGenerator/stargazers)
+[![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/thanh-dat-vu-42b468286/)
 
 <!-- PROJECT LOGO -->
 <br />
@@ -18,9 +16,6 @@
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="public/logo.svg" alt="Logo" width="300" height="300">
   </a>
-
-  <h3 align="center">CourseCraft AI</h3>
-
   <p align="center">
     <a href="https://aicoursegenarator.vercel.app/">View Demo</a>
     ·
