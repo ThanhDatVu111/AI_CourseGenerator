@@ -1,12 +1,11 @@
 "use client";
-import { db } from "@/configs/db";
-import { CourseList } from "@/configs/schema";
+import { db } from "@/configs/Db";
+import { CourseList } from "@/configs/Schema";
 import { useUser } from "@clerk/nextjs";
 import { and, eq } from "drizzle-orm";
 import React, { useEffect, useState } from "react";
 import BasicInfo from "../_components/BasicInfo";
 import { HiOutlineClipboardDocumentCheck } from "react-icons/hi2";
-
 
 function FinishScreen({ params }) {
   //The course ID is passed as a parameter from the router.
