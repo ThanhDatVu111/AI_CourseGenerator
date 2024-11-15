@@ -13,8 +13,8 @@ import { HiPencilSquare } from "react-icons/hi2";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { db } from "@/configs/db";
-import { CourseList } from "@/configs/schema";
+import { db } from "@/configs/Db";
+import { CourseList } from "@/configs/Schema";
 import { eq } from "drizzle-orm";
 
 function EditBasicInfo({ course, refreshData }) {
