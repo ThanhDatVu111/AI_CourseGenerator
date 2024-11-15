@@ -13,9 +13,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { DialogClose } from "@radix-ui/react-dialog";
 import { Button } from "@/components/ui/button";
-import { db } from "@/configs/db";
+import { db } from "@/configs/Db";
 import { eq } from "drizzle-orm";
-import { CourseList } from "@/configs/schema";
+import { CourseList } from "@/configs/Schema";
 
 function EditChapters({ course, index, refreshData }) {
   const Chapters = course?.courseOutput?.course?.chapters;
