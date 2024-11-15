@@ -1,15 +1,3 @@
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Forks][forks-shield]](https://github.com/ThanhDatVu111/AI_CourseGenerator/network/members)
-[![Stargazers][stars-shield]](https://github.com/ThanhDatVu111/AI_CourseGenerator/stargazers)
-[![LinkedIn][linkedin-shield]](https://www.linkedin.com/in/thanh-dat-vu-42b468286/)
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
