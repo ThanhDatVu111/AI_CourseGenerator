@@ -85,7 +85,7 @@ const CreateCourse = () => {
   const GenerateCourseLayout = async () => {
     setLoading(true);
     const BASIC_PROMPT =
-      "Generate a detailed JSON structure for a course tutorial based on the following details. The structure should include fields such as Course Name, Description, Chapters (with Chapter Name, Description, and Duration), and other metadata as specified.";
+      "Generate A Course Tutorial on Following Detail With the following details. The structure should include fields such as Course Name, Description, Chapters (with Chapter Name, Description, and Duration), and other metadata as specified.";
     const USER_INPUT_PROMPT =
       "Category: " +
       userCourseInput?.category +

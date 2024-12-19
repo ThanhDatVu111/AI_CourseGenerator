@@ -41,6 +41,9 @@
 ![Product Name Screen Shot](public/rm2.png)
 
 
+![Product Name Screen Shot](public/rm4.png)
+
+
 ![Product Name Screen Shot](public/rm3.png)
 
 The AI Course Generator is a web application designed to help users create customized courses with the assistance of AI. By using the Gemini API, users can input their own parameters to generate a course that can serve educational purposes or be shared with friends. The platform includes:
